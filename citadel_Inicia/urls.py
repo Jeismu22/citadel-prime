@@ -3,5 +3,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.post_list, name='post_list'),  # Ruta para mostrar los posts
+    path('', views.post_list, name='post_list'),  # Asegúrate de que esta línea esté presente
 ]

@@ -14,11 +14,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-# citadel_prime/urls.py
+# citadel/urls.py
 from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('citadel_Inicia.urls')),  # Incluye las URLs de citadel_Inicia
+    path('', include('citadel_Inicia.urls')),  # Asegúrate de agregar esta línea
 ]
+
