@@ -4,15 +4,14 @@ from django.utils import timezone
 
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    titles = models.CharField(max_length=200)
+    title = models.CharField(max_length=200)  # Cambiado a 'title'
     text = models.TextField()
-    created_data = models.DateTimeField(default=timezone.now)  # Corregido aquí
-    published_date = models.DateTimeField(blank=True, null=True)  # Corregido aquí
+    created_date = models.DateTimeField(default=timezone.now)  # Corregido a 'created_date'
+    published_date = models.DateTimeField(blank=True, null=True)  # Se mantiene igual
 
-    def publishs(self):
-        self.published_date = timezone.now()  # Asegúrate de guardar la fecha publicada
+    def publish(self):  # Cambiado el nombre del método a 'publish'
+        self.published_date = timezone.now()
         self.save()
 
     def __str__(self):
-        return self.titles  # Cambiado a 'titles'
-
+        return self.title  # Cambiado a 'title' para que coincida con el campo
