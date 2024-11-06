@@ -15,11 +15,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 # citadel/urls.py
+# citadel/urls.py
 from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('citadel_Inicia.urls')),  # Asegúrate de agregar esta línea
+    path('admin/', admin.site.urls),          # Ruta para el admin
+    path('', include('citadel_Inicia.urls')), # Incluir las URLs de la app citadel_Inicia
 ]
 
