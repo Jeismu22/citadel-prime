@@ -7,4 +7,4 @@ def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     
     # Pasar los posts a la plantilla como parte del contexto
-    return render(request, 'citadel_Inicia/post_list.html', {'posts': posts})
+    return render(request, 'ciudadela/post_list.html', {'posts': posts})
