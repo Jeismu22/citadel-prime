@@ -1,24 +1,51 @@
-<!-- blog/post_list.html -->
+{% extends 'ciudadela/base.html' %}
+<!-- blog/templates/blog/post_list.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
+    
+    <!-- Cargar la librería estática de Django -->
+    {% load static %}
+    
+    <!-- Enlace para cargar la fuente 'Lobster' desde Google Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    
+    <!-- Cargar los estilos de Bootstrap -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    
+    <!-- Cargar el archivo CSS personalizado del blog -->
+    <link rel="stylesheet" href="{% static 'ciudadela/inicia.css' %}">
 </head>
 <body>
-    <h1>Lista de Posts</h1>
-    
-    <!-- Bucle para mostrar todos los posts -->
-    {% for post in posts %}
+    <!-- Encabezado de la página -->
+    <div class="page-header">
+        <h1><a href="/">Django Girls Blog</a></h1>
+    </div>
+
+    <!-- Contenedor principal para las publicaciones -->
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+                <!-- Bucle para mostrar todos los posts -->
+                
+                {% block content %}
+                {% for post in posts %}
         <div class="post">
-            <h2>{{ post.title }}</h2> <!-- Cambiado a post.title -->
-            <p>{{ post.text }}</p>
-            <small>Publicado el: {{ post.published_date }}</small>
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
-    {% empty %}
-        <p>No hay posts publicados aún.</p>
-    {% endfor %}
-    
+                {% endfor %}
+                {% endblock %}
+
+            </div>
+        </div>
+    </div>
 </body>
 </html>
