@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-n^-=mf^d=v+4nfemfvh!p9g!-ic=7bu^96-u^t94&nn2_u^!-9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'jeicm.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'munozjei2.pythonanywhere.com']
 
 
 
@@ -123,7 +123,7 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/jeicm/citadel_prime/static'
+STATIC_ROOT = '//home/munozjei2/citadel_prime/static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

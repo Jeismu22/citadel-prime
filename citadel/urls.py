@@ -22,5 +22,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),          # Ruta para el admin
     path('', include('citadel_Inicia.urls')), # Incluir las URLs de la app citadel_Inicia
+    
 ]
 
